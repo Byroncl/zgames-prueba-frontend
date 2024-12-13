@@ -1,18 +1,18 @@
-<div class="filter-header d-flex align-items-center justify-content-between">
-  <label for="sportFilter" class="me-2">Filtrar por Deporte:</label>
-  <button class="btn btn-secondary toggle-btn" (click)="toggleFilter()">
-    {{ isFilterOpen ? "<<" : ">>" }}
-  </button>
-</div>
-<div class="form-group d-flex align-items-center mt-2" *ngIf="isFilterOpen">
-  <select
-    id="sportFilter"
-    class="form-select"
-    [(ngModel)]="selectedSportId"
-    (change)="onFilterChange($event)"
-  >
-    <option *ngFor="let sport of sportIds" [value]="sport.id">
-      {{ sport.name }}
-    </option>
-  </select>
+<div *ngIf="isFilterOpen">
+  <div class="filter-header d-flex align-items-center justify-content-between">
+    <label for="sportFilter" class="me-2">Filtrar por Deporte:</label>
+
+  </div>
+  <div class="form-group d-flex align-items-center mt-2">
+    <select
+      id="sportFilter"
+      class="form-select"
+      [(ngModel)]="selectedSportId"
+      (change)="onFilterChange($event)"
+    >
+      <option *ngFor="let sport of sportIds" [value]="sport.id">
+        {{ sport.name }}
+      </option>
+    </select>
+  </div>
 </div>

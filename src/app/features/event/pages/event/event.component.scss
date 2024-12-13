@@ -7,22 +7,28 @@
   flex-wrap: nowrap;
 }
 
-.filter-container {
-  width: 300px;
+.event-table-container {
+  flex-grow: 1; /* Asegura que la tabla ocupe el espacio disponible */
   transition: all 0.3s ease;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px; 
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.filter-container:not(.open) {
+  width: 0; /* Oculta completamente el contenedor */
+  overflow: hidden;
+  padding: 0; /* Elimina cualquier padding residual */
+  visibility: hidden; /* Hace invisible el contenedor cerrado */
 }
 
 .filter-container.open {
-  width: 0;
-  overflow: hidden;
-}
-
-.event-table-container {
-  transition: all 0.3s ease;
-}
-
-.event-table-container.expanded {
-  flex-grow: 2;
+  visibility: visible; /* Muestra el contenedor cuando está abierto */
 }
 
 .bet-slip-container {
@@ -37,14 +43,13 @@
 }
 
 .bet-slip-container.open {
-  width: 300px; 
+  width: 300px;
 }
 
 .toggle-btn {
-  margin-top: 10px;
-  margin-left: -40px;
-  z-index: 10;
   position: absolute;
+  top: 10px;
+  z-index: 10;
   transform: translateX(-100%);
   border-radius: 50%;
   background-color: #6c757d;
@@ -53,6 +58,7 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .toggle-btn:hover {
