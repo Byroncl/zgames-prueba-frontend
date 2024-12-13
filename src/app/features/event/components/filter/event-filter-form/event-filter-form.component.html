@@ -1,0 +1,13 @@
+<div class="form-group d-flex align-items-center">
+  <label for="sportFilter" class="me-2">Filtrar por Deporte:</label>
+  <select
+    id="sportFilter"
+    class="form-select"
+    [(ngModel)]="selectedSportId"
+    (change)="onFilterChange($event)"
+  >
+    <option *ngFor="let sport of sportIds" [value]="sport.id">
+      {{ sport.name }}
+    </option>
+  </select>
+</div>

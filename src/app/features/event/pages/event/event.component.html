@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-12 d-flex">
+      <div class="event-table-container flex-grow-1">
+        <h2 class="mb-4">Eventos Deportivos</h2>
+        <app-event-table [events]="events" (betSelected)="handleBetSelected($event)"></app-event-table>
+      </div>
+
+      <div
+        class="bet-slip-container"
+        [class.open]="isBetSlipOpen"
+      >
+        <button
+          class="btn btn-secondary toggle-btn"
+          (click)="toggleBetSlip()"
+        >
+          {{ isBetSlipOpen ? ">>" : "<<" }}
+        </button>
+        <app-event-form-bet-slip
+          *ngIf="isBetSlipOpen"
+          [selectedBet]="selectedBet"
+        ></app-event-form-bet-slip>
+      </div>
+    </div>
+  </div>
+</div>
+

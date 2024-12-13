@@ -1,0 +1,50 @@
+.container {
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.event-table-container {
+  transition: all 0.3s ease;
+}
+
+.bet-slip-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  border-left: 1px solid #dee2e6;
+}
+
+.bet-slip-container.open {
+  width: 300px; 
+}
+
+.toggle-btn {
+  margin-top: 10px;
+  margin-left: -40px;
+  z-index: 10;
+  position: absolute;
+  transform: translateX(-100%);
+  border-radius: 50%;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #5a6268;
+}
+
+.app-event-form-bet-slip {
+  padding: 15px;
+}
