@@ -1,27 +1,32 @@
-# HackatonTimeline
+# Instalación
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+npm install --force
 
-## Development server
+# Ejecución
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ng serve 
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## hay login y registro
 
-## Build
+## se almacenan las apuestas en la db y se visualizan abajo en el footer con un modal
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Ocultar y mostrar cosas
+![image](https://github.com/user-attachments/assets/f06eccd8-e030-42b3-8bad-898874b117d1)
 
-## Running unit tests
+![image](https://github.com/user-attachments/assets/c01090bb-8343-4203-8f83-a30515f286b9)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![image](https://github.com/user-attachments/assets/f99b0969-4b1d-481e-90ad-3aa2b341dc12)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![image](https://github.com/user-attachments/assets/34d3c808-0f9f-4f5f-8275-6c99febe7365)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# final:
+![image](https://github.com/user-attachments/assets/aac1ec20-1325-42e5-8418-b826404ef15a)
+
+![image](https://github.com/user-attachments/assets/a728a1e7-f48c-4372-b66a-0336b912f59c)
+
+![image](https://github.com/user-attachments/assets/154612b2-310d-472c-8518-33b7473060ed)
+
+![image](https://github.com/user-attachments/assets/33f794c6-fb8b-4313-a558-84556b268e60)
