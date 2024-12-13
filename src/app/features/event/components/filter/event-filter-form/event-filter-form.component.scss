@@ -5,3 +5,22 @@
 label {
   font-weight: bold;
 }
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-btn {
+  margin-left: auto;
+}
+
+:host {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+:host(.open) {
+  display: none;
+}

@@ -7,8 +7,22 @@
   flex-wrap: nowrap;
 }
 
+.filter-container {
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.filter-container.open {
+  width: 0;
+  overflow: hidden;
+}
+
 .event-table-container {
   transition: all 0.3s ease;
+}
+
+.event-table-container.expanded {
+  flex-grow: 2;
 }
 
 .bet-slip-container {

@@ -6,13 +6,13 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class EventService {
-  private apiUrl =
-    "https://betapi.zgameslatam.com/v1/api/sport-events/prematch-highlights?sportId=sr:sport:1&statusSportEvent=NotStarted&marketId=1&limit=10";
+  private baseUrl =
+    "https://betapi.zgameslatam.com/v1/api/sport-events/prematch-highlights";
 
   constructor(private http: HttpClient) {}
 
-  getSportsEvents(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getSportsEvents(sportId: string): Observable<any> {
+    const apiUrl = `${this.baseUrl}?sportId=${sportId}&statusSportEvent=NotStarted&marketId=1&limit=10`;
+    return this.http.get(apiUrl);
   }
-  
 }

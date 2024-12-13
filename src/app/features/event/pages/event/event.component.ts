@@ -7,14 +7,20 @@ import { EventService } from "../../../../core/services/api/event.service";
   styleUrls: ["./event.component.scss"],
 })
 export class EventComponent implements OnInit {
-  events: any[] = []; // Lista de eventos
-  selectedBet: any = null; // Apuesta seleccionada
-  isBetSlipOpen = true; // Estado del acordeón (abierto o cerrado)
+  events: any[] = [];
+  selectedBet: any = null;
+  isBetSlipOpen = true;
+  isFilterOpen = true;
+  selectedSportId = "sr:sport:1";
 
   constructor(private eventService: EventService) {}
 
   ngOnInit(): void {
-    this.eventService.getSportsEvents().subscribe((response) => {
+    this.loadEvents(this.selectedSportId);
+  }
+
+  loadEvents(sportId: string): void {
+    this.eventService.getSportsEvents(sportId).subscribe((response) => {
       if (response && response.data) {
         this.events = response.data.map((event: any) => {
           const market = event.markets.find((m: any) => m.marketId === 1)
@@ -41,7 +47,16 @@ export class EventComponent implements OnInit {
     this.isBetSlipOpen = !this.isBetSlipOpen;
   }
 
+  toggleFilter(): void {
+    this.isFilterOpen = !this.isFilterOpen;
+  }
+
   handleBetSelected(bet: any): void {
     this.selectedBet = bet;
+  }
+
+  handleFilterChanged(sportId: string): void {
+    this.selectedSportId = sportId;
+    this.loadEvents(sportId);
   }
 }

@@ -11,15 +11,19 @@ export class EventFilterFormComponent {
   sportIds = [
     { id: "sr:sport:1", name: "Fútbol" },
     { id: "sr:sport:2", name: "Baloncesto" },
-    { id: "sr:sport:3", name: "Tenis" },
   ];
 
   selectedSportId = "sr:sport:1";
+  isFilterOpen = true;
 
   onFilterChange(event: Event): void {
-    const target = event.target as HTMLSelectElement; 
-    const newSportId = target.value; 
+    const target = event.target as HTMLSelectElement;
+    const newSportId = target.value;
     this.selectedSportId = newSportId;
     this.filterChanged.emit(newSportId);
+  }
+
+  toggleFilter(): void {
+    this.isFilterOpen = !this.isFilterOpen;
   }
 }
