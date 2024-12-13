@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f06eccd8-e030-42b3-8bad-898874b117d1)# Instalación
+# Instalación
 
 npm install --force
 
@@ -12,7 +12,7 @@ ng serve
 ## se almacenan las apuestas en la db y se visualizan abajo en el footer con un modal
 
 # Ocultar y mostrar cosas
-
+![image](https://github.com/user-attachments/assets/f06eccd8-e030-42b3-8bad-898874b117d1)
 
 ![image](https://github.com/user-attachments/assets/c01090bb-8343-4203-8f83-a30515f286b9)
 
