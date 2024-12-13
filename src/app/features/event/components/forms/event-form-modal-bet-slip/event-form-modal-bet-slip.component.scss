@@ -1,0 +1,49 @@
+.custom-modal {
+  .modal-dialog {
+    max-width: 900px;
+  }
+
+  .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .modal-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    align-items: center;
+  }
+
+  .badge {
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+
+  .bg-warning {
+    color: #856404 !important;
+    background-color: #fff3cd !important;
+  }
+
+  .bg-success {
+    color: #155724 !important;
+    background-color: #d4edda !important;
+  }
+
+  .bg-danger {
+    color: #721c24 !important;
+    background-color: #f8d7da !important;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: #f1f5f9;
+  }
+
+  .modal-footer {
+    font-size: 0.875rem;
+    align-items: center;
+  }
+
+  .table-primary {
+    background-color: #e9ecef !important;
+  }
+}

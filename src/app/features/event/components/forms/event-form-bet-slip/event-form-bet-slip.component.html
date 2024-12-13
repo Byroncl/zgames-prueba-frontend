@@ -31,6 +31,7 @@
     <button
       class="btn btn-success btn-block"
       [disabled]="!selectedBet || betAmount <= 0"
+      (click)="confirmBet()"
     >
       Confirmar Apuesta
     </button>

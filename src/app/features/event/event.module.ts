@@ -8,6 +8,7 @@ import { EventRoutingModule } from "./event-routing.module";
 import { EventTableComponent } from "./components/event-table/event-table.component";
 import { EventFormBetSlipComponent } from "./components/forms/event-form-bet-slip/event-form-bet-slip.component";
 import { EventFilterFormComponent } from "./components/filter/event-filter-form/event-filter-form.component";
+import { EventFormModalBetSlipComponent } from "./components/forms/event-form-modal-bet-slip/event-form-modal-bet-slip.component";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { EventFilterFormComponent } from "./components/filter/event-filter-form/
     EventTableComponent,
     EventFormBetSlipComponent,
     EventFilterFormComponent,
+    EventFormModalBetSlipComponent,
   ],
   imports: [SharedModule, EventRoutingModule, FormsModule, ReactiveFormsModule],
 })

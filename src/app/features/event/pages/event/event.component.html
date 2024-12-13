@@ -37,4 +37,13 @@
       </div>
     </div>
   </div>
+
+  <button class="btn btn-primary mt-3 w-100" (click)="isModalOpen = true">
+    Ver Apuestas
+  </button>
+
+  <app-event-form-modal-bet-slip
+    *ngIf="isModalOpen"
+    (closeModal)="isModalOpen = false"
+  ></app-event-form-modal-bet-slip>
 </div>

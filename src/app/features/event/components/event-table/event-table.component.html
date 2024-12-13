@@ -12,11 +12,19 @@
     <tbody>
       <tr *ngFor="let event of events">
         <td>
-          <strong class="text-primary">{{ event.homeTeam }}</strong>
+          <strong class="text-primary ">{{ event.homeTeam }}</strong>
           <span class="text-muted">vs.</span>
           <strong class="text-secondary">{{ event.awayTeam }}</strong>
         </td>
         <td>{{ event.date | date: 'short' }}</td>
+        <td>
+          <button
+            class="btn btn-outline-primary btn-sm w-100"
+            (click)="selectBet(event, event.odds[2])"
+          >
+            {{ event.odds[2]?.odds }}
+          </button>
+        </td>
         <td>
           <button
             class="btn btn-outline-primary btn-sm w-100"
@@ -33,14 +41,7 @@
             {{ event.odds[1]?.odds }}
           </button>
         </td>
-        <td>
-          <button
-            class="btn btn-outline-primary btn-sm w-100"
-            (click)="selectBet(event, event.odds[2])"
-          >
-            {{ event.odds[2]?.odds }}
-          </button>
-        </td>
+        
       </tr>
     </tbody>
   </table>

@@ -13,9 +13,10 @@ export class EventTableComponent {
     const selectedBet = {
       team: odd.name,
       odds: odd.odds,
-      event: `${event.homeTeam} vs. ${event.awayTeam}`,
+      eventId: event.eventId, // ID único del evento
+      event: `${event.homeTeam} vs. ${event.awayTeam}`, // Descripción del evento
       tournament: event.tournamentName,
     };
-    this.betSelected.emit(selectedBet); 
+    this.betSelected.emit(selectedBet); // Emitir el evento seleccionado
   }
 }

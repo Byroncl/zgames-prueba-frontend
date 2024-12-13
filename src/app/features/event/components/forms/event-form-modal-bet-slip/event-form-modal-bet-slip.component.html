@@ -1,0 +1,78 @@
+<div class="custom-modal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content shadow-lg border-0">
+      <!-- Header -->
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">
+          <i class="bi bi-list-task me-2"></i> Lista de Apuestas
+        </h5>
+        <button type="button" class="btn-close btn-close-white" (click)="handleCloseModal()"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body bg-light">
+        <div *ngIf="bets && bets.length > 0; else noBets">
+          <div class="table-responsive rounded bg-white p-3 shadow-sm">
+            <table class="table table-hover align-middle text-center">
+              <thead class="table-primary text-dark">
+                <tr>
+                  <th scope="col">Evento</th>
+                  <th scope="col">Equipo</th>
+                  <th scope="col">Monto</th>
+                  <th scope="col">Cuota</th>
+                  <th scope="col">Posible Ganancia</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Creado</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let bet of bets" class="align-middle">
+                  <td>{{ bet.event }}</td>
+                  <td class="fw-bold">{{ bet.team }}</td>
+                  <td>{{ bet.amount | currency }}</td>
+                  <td>{{ bet.odds }}</td>
+                  <td class="text-success fw-bold">{{ bet.possibleWin | currency }}</td>
+                  <td>
+                    <span
+                      class="badge"
+                      [ngClass]="{
+                        'bg-warning': bet.status === 'pending',
+                        'bg-success': bet.status === 'won',
+                        'bg-danger': bet.status === 'lost'
+                      }"
+                    >
+                      {{ bet.status }}
+                    </span>
+                  </td>
+                  <td>{{ bet.createdAt | date: 'short' }}</td>
+                  <td>
+                    <button class="btn btn-outline-danger btn-sm d-flex align-items-center" (click)="deleteBet(bet._id)">
+                      <i class="bi bi-trash me-1"></i> Eliminar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- No Bets Template -->
+        <ng-template #noBets>
+          <div class="d-flex flex-column align-items-center text-center mt-4">
+            <i class="bi bi-emoji-frown display-4 text-muted"></i>
+            <p class="text-muted mt-3">No hay apuestas registradas.</p>
+          </div>
+        </ng-template>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer bg-secondary text-white d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-light" (click)="handleCloseModal()">
+          <i class="bi bi-x-circle"></i> Cerrar
+        </button>
+        <small class="text-muted">Total de apuestas: {{ bets?.length || 0 }}</small>
+      </div>
+    </div>
+  </div>
+</div>
